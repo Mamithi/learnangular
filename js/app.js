@@ -1,4 +1,10 @@
-angular.module('myApp', [])
-	.controller('MyController', function($scope){
-		$scope.name = "Lawrence";
-	});
+var app = angular.module('myApp', []);
+	app.controller('MyController', function($scope){
+		$scope.counter = 0;
+		$scope.add = function(amount) { $scope.counter += amount; };
+		$scope.subtract = function(amount) { $scope.counter -= amount ;};
+
+		$scope.person = {
+			name : "Lawrence"
+		}
+});
