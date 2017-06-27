@@ -1,10 +1,12 @@
 var app = angular.module('myApp', []);
-	app.controller('MyController', function($scope){
-		$scope.counter = 0;
-		$scope.add = function(amount) { $scope.counter += amount; };
-		$scope.subtract = function(amount) { $scope.counter -= amount ;};
+	
+	app.controller('ParentController', function($scope){
+		$scope.person = { greeted: false};
+	});
 
-		$scope.person = {
-			name : "Lawrence"
+	app.controller('ChildController', function($scope){
+		$scope.sayHello = function(){
+			$scope.person.name = "Lawrence";
+			$scope.person.greeted = true;
 		}
-});
+	})
